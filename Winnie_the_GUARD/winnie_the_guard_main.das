@@ -34,6 +34,9 @@ var
     pigPosX = 0
     pigDirect = 1
     pigRight = true
+    isInGame: bool
+
+
 
 
 
@@ -63,7 +66,8 @@ def initialize
     score = 0
     enemiesKilled = 0
     play_sound(start_music, volume)
-    play_sound_loop(back_music, volume)
+    if(!isInGame)
+        play_sound_loop(back_music, volume)
     clear(bullets)
     clear(clouds)
     clear(enemies)
@@ -161,6 +165,7 @@ def act(dt: float)
         schedule_quit_game()
     update_input(dt)
     update_gameplay()
+    isInGame = true
 
 
 [export]
