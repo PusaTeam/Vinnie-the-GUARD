@@ -154,7 +154,6 @@ def update_gameplay()
         clear(bullets)
         clear(clouds)
         clear(enemies)
-        delete back_music
 
 [export]
 def act(dt: float)
